@@ -146,9 +146,9 @@ function LoginPage({ onAuthSuccess }) {
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">
             Don't have an account?{' '}
-            <Link href="/register" className="text-indigo-600 hover:text-indigo-800 font-medium transition-colors">
-              Sign up
-            </Link>
+            <Link to="/register" className="text-indigo-600 hover:text-indigo-800 font-medium transition-colors">
+  Sign up
+</Link>
           </p>
         </div>
       </div>
