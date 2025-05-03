@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function LoginPage({ onAuthSuccess }) {
   const [formData, setFormData] = useState({
@@ -146,9 +146,9 @@ function LoginPage({ onAuthSuccess }) {
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">
             Don't have an account?{' '}
-            <a href="/register" className="text-indigo-600 hover:text-indigo-800 font-medium transition-colors">
+            <Link href="/register" className="text-indigo-600 hover:text-indigo-800 font-medium transition-colors">
               Sign up
-            </a>
+            </Link>
           </p>
         </div>
       </div>
