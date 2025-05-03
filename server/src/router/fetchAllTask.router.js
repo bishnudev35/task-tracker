@@ -5,7 +5,8 @@ import prisma from '../lib/db.js';
 const router = Router();
 router.get('/fetchAllTask',authMiddleware, async (req, res) => {
    try {
-    const {id}=req.body.user;// Extract user info from request body
+    const {id}=req.user;
+    console.log("id",id)// Extract user info from request body
     if (!id) {
         return res.status(400).json({ message: 'User ID is required' })
     }
@@ -21,7 +22,8 @@ router.get('/fetchAllTask',authMiddleware, async (req, res) => {
             id: task.id,
             title: task.title,
             description: task.description,
-            status: task.status
+            status: task.status,
+            time: task.createdAt.toISOString(), // Convert to ISO string for better readability
         })),
     })
    } catch (error) {

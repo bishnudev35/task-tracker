@@ -2,12 +2,13 @@ import Router from 'express'
 import prisma from '../lib/db.js'
 import bcrypt from 'bcrypt'
 import JwtSign from '../util/jwt.js'
-import{ jwtLongSign } from '../util/jwt.js'
+import {jwtLongSign}  from '../util/jwt.js'
 const router = Router()
 
 router.post('/register', async (req, res) => {
 try {
     const { name,email, password,Country } = req.body
+    console.log('Registering user:', req.body)
     if (!name || !email || !password || !Country) {
         return res.status(400).json({ message: 'All fields are required' })
     }
@@ -19,6 +20,7 @@ try {
     }
     const hasPassword = await bcrypt.hash(password, 10);
     const longTermToken = jwtLongSign(email, process.env.JWT_SECRET)
+    console.log("longTermToken",longTermToken)
     const newUser = await prisma.user.create({
         data: {
             name,

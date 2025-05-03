@@ -6,8 +6,13 @@ import creatTaskRouter from "./router/creatTask.router.js"
 import deleteTaskRouter from "./router/deleteTask.router.js"
 import updateTaskRouter from "./router/updateTask.router.js"
 import getTaskRouter from "./router/fetchAllTask.router.js"
+import validtocken from './router/valid.router.js'
+import profile from './router/profile.router.js'
+import logout from './router/logout.router.js'
+import cors from 'cors'
 const app=express();
 app.use(express.json())
+app.use(cors())
 app.use(express.urlencoded({extended:true}))
 prisma.$connect()
   .then(() => {
@@ -22,7 +27,9 @@ app.use('/api/v1',creatTaskRouter);
 app.use('/api/v1',deleteTaskRouter);
 app.use('/api/v1',updateTaskRouter);
 app.use('/api/v1',getTaskRouter);
-
+app.use('/api/v1',validtocken);
+app.use('/api/v1',profile);
+app.use('/api/v1',logout);
 const PORT=process.env.PORT || 5000
 app.listen(PORT,()=>{
     console.log(`server is running on port ${PORT}`)
