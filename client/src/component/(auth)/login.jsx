@@ -77,11 +77,11 @@ function LoginPage({ onAuthSuccess }) {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 p-4">
-      <div className="bg-white p-8 rounded-xl shadow-xl w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#05060ae9] to-[#202833] p-4">
+      <div className="bg-[#202833] p-8 rounded-xl shadow-xl w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">Login</h1>
-          <p className="text-gray-600">Enter your credentials to continue</p>
+          <p className="text-white text-xl">Enter your credentials to continue</p>
         </div>
         
         {errors.server && (
@@ -92,14 +92,14 @@ function LoginPage({ onAuthSuccess }) {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+            <label htmlFor="email" className="block text-sm font-medium text-white mb-1">Email Address</label>
             <input
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
+              className={`text-white w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
                 errors.email ? 'border-red-500 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-200'
               }`}
               placeholder="you@example.com"
@@ -108,7 +108,7 @@ function LoginPage({ onAuthSuccess }) {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <label htmlFor="password" className="block text-sm font-medium text-gray-100 mb-1">Password</label>
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
@@ -116,7 +116,7 @@ function LoginPage({ onAuthSuccess }) {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
+                className={`text-white w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
                   errors.password ? 'border-red-500 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-200'
                 }`}
                 placeholder="••••••••"
@@ -144,7 +144,7 @@ function LoginPage({ onAuthSuccess }) {
         </form>
 
         <div className="mt-6 text-center">
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-gray-300">
             Don't have an account?{' '}
             <Link to="/register" className="text-indigo-600 hover:text-indigo-800 font-medium transition-colors">
   Sign up
