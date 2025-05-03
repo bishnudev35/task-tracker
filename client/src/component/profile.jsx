@@ -18,7 +18,7 @@ function Profile() {
       }
       
       try {
-        const response = await fetch(`http://localhost:4000/api/v1/profile`, {
+        const response = await fetch(`https://task-tracker-uwol.onrender.com/api/v1/profile`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -59,7 +59,7 @@ e.preventDefault();
        console.log("Token:", token);
       console.log("Long Term Token:", longTermToken);
       // Send logout request to the server
-      const response = await fetch(`http://localhost:4000/api/v1/logout`, {
+      const response = await fetch(`https://task-tracker-uwol.onrender.com/api/v1/logout`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

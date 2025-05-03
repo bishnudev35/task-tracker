@@ -18,7 +18,7 @@ function App() {
     }
 
     try {
-      const response = await fetch(`http://localhost:4000/api/v1/valid?longTermToken=${longTermToken}`, {
+      const response = await fetch(`https://task-tracker-uwol.onrender.com/api/v1/valid?longTermToken=${longTermToken}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

@@ -69,7 +69,7 @@ function SignupPage({ onAuthSuccess }) {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await fetch('http://localhost:4000/api/v1/register', {
+        const response = await fetch('https://task-tracker-uwol.onrender.com/api/v1/register', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ function AllTask() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await fetch("http://localhost:4000/api/v1/fetchAllTask", {
+        const response = await fetch("https://task-tracker-uwol.onrender.com/api/v1/fetchAllTask", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -40,7 +40,7 @@ function AllTask() {
 
   const updateTaskStatus = async (taskId, newStatus) => {
     try {
-      const response = await fetch("http://localhost:4000/api/v1/updateTask", {
+      const response = await fetch("https://task-tracker-uwol.onrender.com/api/v1/updateTask", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +69,7 @@ function AllTask() {
   const deleteTask = async (taskId) => {
     if (window.confirm("Are you sure you want to delete this task?")) {
       try {
-        const response = await fetch("http://localhost:4000/api/v1/deleteTask", {
+        const response = await fetch("https://task-tracker-uwol.onrender.com/api/v1/deleteTask", {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
