@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function SignupPage({ onAuthSuccess }) {
   const [formData, setFormData] = useState({
@@ -226,9 +226,9 @@ function SignupPage({ onAuthSuccess }) {
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">
             Already have an account?{' '}
-            <a href="/login" className="text-indigo-600 hover:text-indigo-800 font-medium transition-colors">
+            <Link to="/login" className="text-indigo-600 hover:text-indigo-800 font-medium transition-colors">
               Sign in
-            </a>
+            </Link>
           </p>
         </div>
       </div>
